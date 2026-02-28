@@ -23,6 +23,7 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /var/www/nova_nisa
+          php artisan down
           git pull origin main
           composer install --no-dev
           php artisan migrate --force
